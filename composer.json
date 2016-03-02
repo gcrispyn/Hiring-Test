@@ -1,0 +1,26 @@
+{
+    "minimum-stability": "stable",
+    "name": "ssense/hiring-test",
+    "description": "Micro project where the candadite will be asked to complete tasks as an evaluation",
+    "license": "proprietary",
+    "require": {
+        "silex/silex": "1.2.3",
+        "symfony/twig-bridge": "2.6.3",
+        "twig/twig": "1.18.0",
+        "twig/extensions": "1.2.0",
+        "symfony/yaml": "2.6.3",
+        "symfony/config": "2.6.3",
+        "symfony/security": "2.6.3",
+        "symfony/event-dispatcher": "2.6.3",
+        "doctrine/dbal": "2.5.1",
+        "marcojanssen/silex-routing-service-provider": "^1.3",
+        "igorw/config-service-provider": "^1.2",
+        "moust/silex-cache": "1.0.*@dev"
+    },
+    "config": {
+        "vendor-dir": "vendor/be"
+    },
+    "autoload": {
+        "classmap": [ "src/"] 
+    }
+}
