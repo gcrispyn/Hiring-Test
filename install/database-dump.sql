@@ -13,7 +13,7 @@ use mysql;
 DROP DATABASE IF EXISTS `hiring-test`;
 CREATE DATABASE `hiring-test`;
 
-// Use the enw database
+# Use the new database
 use `hiring-test`;
 
 # Dump of table categories
