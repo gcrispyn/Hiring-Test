@@ -1,0 +1,17 @@
+{
+  "1": {
+    "name": "Canada",
+    "currency_id": "1",
+    "code": "CA"
+  },
+  "2": {
+    "name": "United States",
+    "currency_id": "2",
+    "code": "US"
+  },
+  "3": {
+    "name": "France",
+    "currency_id": "3",
+    "code": "FR"
+  }
+}

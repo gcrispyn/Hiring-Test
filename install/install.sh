@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# import SQL schema
-mysql -u root c9 < install/database-dump.sql
+# install some librairies
+sudo apt-get update
+sudo apt-get -y install mysql-server php5-mysql php5 php5-memcached memcached
 
 # change VHOST file
 sudo sed -i -e "s/workspace/workspace\/web/g" /etc/apache2/sites-available/001-cloud9.conf
@@ -11,3 +12,6 @@ composer install
 
 # restart apache
 sudo service apache2 restart
+
+# start Redis
+sudo service redis-server start

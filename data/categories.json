@@ -1,0 +1,39 @@
+{
+  "1": {
+    "name": "Clothes"
+  },
+  "2": {
+    "name": "Accessories"
+  },
+  "3": {
+    "name": "Shoes"
+  },
+  "4": {
+    "name": "Jeans",
+    "parent_id": 1
+  },
+  "5": {
+    "name": "Sweaters",
+    "parent_id": 1
+  },
+  "6": {
+    "name": "Dresses",
+    "parent_id": 1
+  },
+  "7": {
+    "name": "Hats",
+    "parent_id": 2
+  },
+  "8": {
+    "name": "Umbrellas",
+    "parent_id": 2
+  },
+  "9": {
+    "name": "Boots",
+    "parent_id": 3
+  },
+  "10": {
+    "name": "Heels",
+    "parent_id": 3
+  }
+}

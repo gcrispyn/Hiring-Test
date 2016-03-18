@@ -1,0 +1,14 @@
+{
+  "1": {
+    "code": "CAD",
+    "format": "%s$"
+  },
+  "2": {
+    "code": "USD",
+    "format": "$%s"
+  },
+  "3": {
+    "code": "EUR",
+    "format": "€%s"
+  }
+}
