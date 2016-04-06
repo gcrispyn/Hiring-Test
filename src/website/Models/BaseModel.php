@@ -5,6 +5,9 @@ use Silex\Application;
 
 abstract class BaseModel
 {
+    const BASE_INSERT_QUERY = <<<SQL
+INSERT INTO %s (%s) VALUES (%s)
+SQL;
     /**
      * Database connexion
      * 
@@ -88,6 +91,21 @@ abstract class BaseModel
         if (empty($this->tableName)) {
             throw new \Exception('The tableName parameter is mandatory');    
         }
+    }
+    
+    public function add(array $data)
+    {
+        // Check mandatory fields
+        $this->checkMandatoryFields();
+        
+        $query = sprintf(
+            self::BASE_INSERT_QUERY,
+            $this->tableName,
+            implode(',', array_keys($data)),
+            "'" . implode("','", array_values($data)) . "'"
+        );
+        
+        $this->connexion->executeQuery($query);
     }
 
 }

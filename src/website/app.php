@@ -11,9 +11,6 @@ error_reporting(E_ALL);
 // Class autoloader from composer
 require_once __DIR__ . '/../../vendor/be/autoload.php';
 
-// Application configurations
-require_once __DIR__ . '/../../configs/application.php';
-
 // Create the application
 $app = new Application();
 
@@ -27,6 +24,10 @@ $app->register(new RoutingServiceProvider('routing.routes'));
 $app->register(
     new ConfigServiceProvider(__DIR__ . '/../../configs/mysql.php')
 );
+
+$app->register(
+    new ConfigServiceProvider(__DIR__ . '/../../configs/application.php')
+);
 $app->register(new Silex\Provider\DoctrineServiceProvider(), $app['db.options']);
 
 // Initiate Twig within the application for tempalte rendering
@@ -38,7 +39,7 @@ $app->register(new TwigServiceProvider(), array(
 $app->register(new Moust\Silex\Provider\CacheServiceProvider(), array(
     'cache.options' => array(
         'filesystem' => array(
-            'driver' => 'file',
+            'driver' => 'redis',
             'cache_dir' => './tmp'
         )
     )
@@ -48,6 +49,8 @@ $app->register(new Moust\Silex\Provider\CacheServiceProvider(), array(
 $app->error(function (\Exception $e, $code) {
     return new Response($e->getMessage());
 });
+
+$app->register(new SSENSE\HiringTest\Service\ServiceProvider());
 
 // Return the application
 return $app;
