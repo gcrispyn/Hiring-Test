@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8f4f42205c26a26d94a4e9da42adb640",
-    "content-hash": "430e65bf14461ac305b21b8cb523d1c7",
+    "hash": "bf07f76f9341111e61cd1057103f6536",
+    "content-hash": "cd6e618e0437d023164984e916982527",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1747,13 +1747,50 @@
                 "templating"
             ],
             "time": "2015-01-25 17:32:08"
+        },
+        {
+            "name": "vertigolabs/overcast",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jaimz22/Overcast.git",
+                "reference": "35cefe6a6c4725946ca272660cd49623ffff052f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jaimz22/Overcast/zipball/35cefe6a6c4725946ca272660cd49623ffff052f",
+                "reference": "35cefe6a6c4725946ca272660cd49623ffff052f",
+                "shasum": ""
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Allows for better handling of http connections to Forecast.io webservice"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "VertigoLabs\\Overcast\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Murray",
+                    "email": "jaimz@vertigolabs.org"
+                }
+            ],
+            "description": "An easy to use wrapper for the Forecast.io API",
+            "time": "2016-01-17 15:49:35"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "moust/silex-cache": 20
+        "moust/silex-cache": 20,
+        "vertigolabs/overcast": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
