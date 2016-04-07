@@ -1,0 +1,23 @@
+{% extends "common/layout.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1>Upcoming Montreal weather for next {{ app.request.get('daysNumber') }} days</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <th>Day</th>
+                <th>Weather</th>
+            </thead>
+            <tbody>
+                {% for date, data in weather %}
+                <tr>
+                    <td>{{date}}</td>
+                    <td>{{data.currently.summary}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>      
+    </div>
+</div>
+{% endblock %}

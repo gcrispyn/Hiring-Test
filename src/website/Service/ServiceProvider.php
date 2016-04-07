@@ -3,6 +3,7 @@ namespace SSENSE\HiringTest\Service;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;
+use ReflectionClass;
 
 class ServiceProvider implements ServiceProviderInterface
 {
@@ -12,7 +13,12 @@ class ServiceProvider implements ServiceProviderInterface
     public function register(Application $app)
     {
         foreach ($app['services'] as $serviceName => $className) {
-            $app[$serviceName] = new $className($app);
+            if (! is_array($className)) {
+                $app[$serviceName] = new $className($app);
+            } else {
+                $r = new ReflectionClass($className['class']);
+                $app[$serviceName] = $r->newInstanceArgs($className['arguments']);; 
+            }
         }
     }
     

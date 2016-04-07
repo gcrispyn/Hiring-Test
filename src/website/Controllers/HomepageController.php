@@ -28,7 +28,7 @@ class HomepageController
     public function canadianProductsAction(Application $app)
     {
         $products = $app['cache']->fetch('products');
-        
+
         if ($products === false) {
             $products = $app['products']->getProductsByCountryCode(Country::CANADA_CODE);
 
@@ -38,6 +38,30 @@ class HomepageController
         // Render the page
         return $app['twig']->render('homepage/canadianProducts.html', [
             'products' => $products
+        ]);
+    }
+    
+    public function montrealWeatherAction(Application $app, Request $request)
+    {
+        $daysNumber = $request->get('daysNumber');
+        $weather        = $app['cache']->fetch('weather');
+
+        $montrealConfig = $app['cities']['montreal'];
+
+        if ($weather === false) {
+            $weather = [];
+            for ($i = 1 ; $i <= $daysNumber; $i++) {
+                $date = new \DateTime();
+                $date->modify('+' . $i . ' day');
+                $weather[$date->format('d/m/Y')] = $app['overcast']->getForecast($montrealConfig['latitude'], $montrealConfig['longitude'], $date);    
+            }
+
+            $app['cache']->store('weather', $weather);
+        }
+
+        // Render the page
+        return $app['twig']->render('homepage/montrealWeather.html', [
+            'weather' => $weather
         ]);
     }
 }

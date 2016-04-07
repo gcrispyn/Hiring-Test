@@ -38,10 +38,7 @@ $app->register(new TwigServiceProvider(), array(
 // Initiate the cache
 $app->register(new Moust\Silex\Provider\CacheServiceProvider(), array(
     'cache.options' => array(
-        'filesystem' => array(
-            'driver' => 'redis',
-            'cache_dir' => './tmp'
-        )
+        'driver' => 'redis'
     )
 ));
 
