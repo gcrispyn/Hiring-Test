@@ -92,7 +92,9 @@ SQL;
             throw new \Exception('The tableName parameter is mandatory');    
         }
     }
-    
+    /**
+     * Insert new data in database
+     */
     public function add(array $data)
     {
         // Check mandatory fields
