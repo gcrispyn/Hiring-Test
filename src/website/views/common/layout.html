@@ -13,9 +13,9 @@
         <div class="header clearfix">
           <nav>
             <ul class="nav nav-pills pull-right">
-              <li role="presentation" class="active"><a href="/">Home</a></li>
-              <li role="presentation"><a href="/canadian-products">Canadian Products</a></li>
-              <li role="presentation"><a href="/montreal-weather/7">Montreal Weather</a></li>
+              {% for element in app.menu  %}
+                <li role="presentation" {% if (element.name == app.request.attributes.get('_route'))  %} class="active" {% endif %}><a href="{{ element.url }}">{{ element.title }}</a></li>
+              {% endfor %}
             </ul>
           </nav>
           <h3 class="text-muted">SSENSE - IT</h3>

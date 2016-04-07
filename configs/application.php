@@ -24,5 +24,22 @@ return [
             'latitude'  => 45.5087,
             'longitude' => -73.554 
         ]
+    ],
+    'menu' => [
+        [
+            'title' => 'Home',
+            'url'   => '/',
+            'name'  => 'homepage'
+        ],
+                [
+            'title' => 'Canadian Products',
+            'url'   => '/canadian-products',
+            'name'  => 'canadianProducts'
+        ],
+                [
+            'title' => 'Montreal weather',
+            'url'   => '/montreal-weather/7',
+            'name'  => 'montrealWeather'
+        ]
     ]
 ];
