@@ -5,6 +5,7 @@ use SSENSE\HiringTest\Models\Currency;
 use SSENSE\HiringTest\Models\Price;
 use SSENSE\HiringTest\Models\Product;
 use SSENSE\HiringTest\Models\Stock;
+use VertigoLabs\Overcast\Overcast;
 return [
     'services' => [
         'countries'  => Country::class,
@@ -12,6 +13,16 @@ return [
         'currencies' => Currency::class,
         'prices'     => Price::class,
         'products'   => Product::class,
-        'stocks'     => Stock::class
+        'stocks'     => Stock::class,
+        'overcast'   => [
+            'class'     => Overcast::class,
+            'arguments' => ['e60efe99b1bf9036ce9a154a5c1c10ee'] 
+        ]
+    ],
+    'cities' => [
+        'montreal' => [
+            'latitude'  => 45.5087,
+            'longitude' => -73.554 
+        ]
     ]
 ];
